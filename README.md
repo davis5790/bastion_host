@@ -23,3 +23,7 @@ group only allows SSH traffic originating from the bastion host.
 ### Connectivity
 
 In this development setting we connect to our bastion host via SSH and a bastion host key pair. Once connected to the bastion host, we are able to ssh from the bastion host to our private instance via a separate key pair and the private ip of the instance hosting the internal app.
+
+![Bastion host banner](https://github.com/davis5790/bastion_host/blob/main/images/bastion_banner.png)
+
+![Private instance banner](https://github.com/davis5790/bastion_host/blob/main/images/private_instance.png)
