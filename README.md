@@ -6,8 +6,7 @@ bastion host to provide indirect access to an internal app hosted in a private s
 
 ### VPC Setup
 
-The VPC has a public subnet containing a public facing app hosted on an EC2 instance, a second EC2 instance used as a bastion
-host, and a NAT gateway.
+The VPC consists 2 public subnets, and 2 private subnets.
 The purpose of the bastion host is to allow authorized users to authenticate and then connect to an internal application hosted
 on an EC2 instance in a private subnet.
 The NAT gateway exists in the public subnet to allow the internal application hosted in the private subnet to connect to the
@@ -21,3 +20,6 @@ IP address. In a production setting this would be configured to allow traffic fr
 2. The second security group is attached to the EC2 instance hosting the internal application in the private subnet. This security
 group only allows SSH traffic originating from the bastion host.
 
+### Connectivity
+
+In this development setting we connect to our bastion host via SSH and a bastion host key pair. Once connected to the bastion host, we are able to ssh from the bastion host to our private instance via a separate key pair and the private ip of the instance hosting the internal app.
